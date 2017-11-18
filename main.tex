@@ -1,0 +1,47 @@
+\documentclass[12pt]{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel} 	% enable russian encoding
+\usepackage{geometry}  			% allow to set the indents of page 
+\usepackage{enumitem} 			% allow to use lists
+\usepackage{setspace} 			
+\usepackage{hyperref}		 	% switch on clickable links
+\usepackage[ddmmyyyy]{datetime} 	% allow to set own template of date
+\renewcommand{\dateseparator}{.}
+\geometry{ a4paper, left=0.3in, top=0.75in, right=0.75in, bottom=0.3in }
+
+\begin{document}
+	\begin{center}
+		{\LARGE Annotation}\\
+		\today
+	\end{center}
+	\par
+	\large
+	\input{src/header.tex}
+	\\
+	\vspace{0.3in}
+	{\setstretch{0.5}
+	\newline
+	\textbf{The facts mentioned in the article:}
+	{\normalsize
+	\par
+	\input{src/facts.tex}
+	}
+	\hrulefill
+	\vspace{0.15in}
+	\newline
+	\textbf{Positive consequences:}
+	{\normalsize
+	\par
+	\input{src/pros.tex}
+	\hrulefill
+	}	
+	\vspace{0.15in}
+	\newline
+	\textbf{ Negative consequences:}
+	{\normalsize
+	\par
+	\input{src/cons.tex}
+	}
+	}
+\end{document}
