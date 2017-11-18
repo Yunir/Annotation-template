@@ -1,0 +1,76 @@
+\documentclass[12pt]{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{hyperref}
+\geometry{ a4paper, left=1in, top=0.75in, bottom=0.25in }
+\title{Аннотация}
+\author{The Author}
+\date{13.11.2017}
+
+\begin{document}
+	\begin{center}
+		{\LARGE Аннотация}\\13.11.2017
+	\end{center}
+	\par
+	\large
+	\begin{tabular}{rl}
+		Тема:&SpringData или "бывает же магия в коде"\\
+    		Автор:&Alexey Pismak\\
+		Теги:&spring, java, nosql, ORM, JPA \\
+   	 	Дата публикации:& 14.09.2016\\
+   	 	Размер статьи:&1030 слов\\
+		Ссылка на источник*:& \url{https://goo.gl/iO0gE4}
+	\end{tabular}
+	
+	\par
+	{\small*Полная ссылка на источник указана внизу страницы\footnote{\label{full_link} http://www.tune-it.ru/web/alenet/blog/-/blogs/springdata-или-бывает-же-магия-в-коде-}}
+	\\
+	\vspace{0.3in}
+	{\setstretch{0.5}
+	\newline
+	Факты, упомянутые в статье:
+	{\normalsize
+	\par
+	
+	\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item  Раньше для работы с базами данных программисты использовали JDBC. 
+	\item  ORM и JPA — новые инструменты для работы с БД, в которой были учтены пожелания программистов и который стал значительно проще в использовании нежели JDBC
+	\item Для практики программист всю конфигурацию выносит в отдельный app.properties и добавляет часть кода для запуска SpringBoot-приложения, а также код, связанный с настройкой работы с БД, выносит в отдельный Java-config 
+	\item В 2k16 наше время не нужно больше настраивать много нудных настроек для работы с БД в JDBC, достаточно создать DAO для сущности и можно приступать к работе. 
+	\item В CrudRepository хранится набор методов для работы с сущностью: выборка (по ID/всех), удаление, сохранение и тд.
+	\item В тестах мы можем использовать метод findUserByName(“test”), присвоив его к объекту User, который однозначно дает понять каким образом Spring формирует прокси-объекты 
+	\item Многие возможности методов SpringData с их проблемами можно заменить на аннотации интерфейса Repository 
+	\end{enumerate}}
+	\hrulefill
+	\vspace{0.15in}
+	\newline
+	Позитивные следствия/достоинства описанной технологии:
+	{\normalsize
+	\par
+	\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item С помощью инструментов ORM и JPA программисты затрачивают меньше времени на настройку и конфигурацию для использования БД 
+	\item Кривые Методы SpringData свободно заменяются аннотациями @Query интерфейса Repository с указанием запроса на JPQL
+	\item С такими инструментами как ORM и JPA даже Junior-Developer’ы могут позволить себе соединять свои приложения с базами данных 
+	\end{enumerate}
+	\hrulefill
+	}	
+	\vspace{0.15in}
+	\newline
+	Негативные следствия/недостатки технологии:
+	{\normalsize
+	\par
+	\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item Не все программисты еще знают об ORM и JPA, и всё еще продолжают использовать JDBC
+	\item Для полного понимания использования БД и ведения уровня бизнес-логики изначально нужно прочитать очень много статей, мануалов, а также реализаций методов в репозиториях 
+	\item На первом семестре ВТ-ПИ еще нет предмета СУБД 
+	\end{enumerate}
+	}
+	}
+\end{document}
